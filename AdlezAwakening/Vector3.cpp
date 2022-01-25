@@ -1,6 +1,7 @@
 #include "Vector3.h"
 #include "QtMath"
 #include "QVector3D"
+#include "QVector2D"
 void Vector3::Inverse(float v[3])
 {
         v[0] = -v[0];
