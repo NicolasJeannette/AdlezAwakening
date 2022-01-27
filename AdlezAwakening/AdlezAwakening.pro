@@ -11,7 +11,7 @@ CONFIG += c++11
 
 SOURCES += \
     Asset.cpp \
-    Game.cpp \
+    GameManager.cpp \
     Stat.cpp \
     Vector2.cpp \
     Vector3.cpp \
@@ -21,7 +21,7 @@ SOURCES += \
 
 HEADERS += \
     Asset.h \
-    Game.h \
+    GameManager.h \
     Stat.h \
     Vector2.h \
     Vector3.h \

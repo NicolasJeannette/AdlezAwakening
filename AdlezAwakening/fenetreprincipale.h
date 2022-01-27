@@ -2,6 +2,9 @@
 #define FENETREPRINCIPALE_H
 
 #include <QMainWindow>
+class QGraphicsScene;
+class QGraphicsView;
+class GameManager;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class FenetrePrincipale; }
@@ -17,5 +20,9 @@ public:
 
 private:
     Ui::FenetrePrincipale *ui;
+    QGraphicsScene *scene;
+        QGraphicsView *view;
+
+        GameManager *game;
 };
 #endif // FENETREPRINCIPALE_H
