@@ -3,6 +3,9 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QGraphicsScene>
+#include <QGraphicsItem>
+#include <QGraphicsView>
 
 int main(int argc, char *argv[])
 {
@@ -18,6 +21,9 @@ int main(int argc, char *argv[])
         }
     }
     FenetrePrincipale w;
+
+
+
     w.show();
     return a.exec();
 }

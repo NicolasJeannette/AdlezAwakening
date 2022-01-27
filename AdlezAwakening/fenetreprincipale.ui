@@ -35,20 +35,14 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
-    <widget class="QOpenGLWidget" name="openGLWidget">
+    <widget class="GLDisplayWidget" name="openGLWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>800</width>
-       <height>600</height>
+       <x>-1</x>
+       <y>-1</y>
+       <width>801</width>
+       <height>571</height>
       </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
      </property>
     </widget>
    </widget>
@@ -72,6 +66,13 @@
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GLDisplayWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>glwidgetdisplay.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
