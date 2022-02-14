@@ -2,7 +2,8 @@
 #define GAMEMANAGER_H
 #include "player.h"
 #include "input.h"
-
+#include "Dungeon.h"
+#include "Room.h"
 
 class GameManager
 {
@@ -15,7 +16,7 @@ public:
     void LoadContent();
     Player *joueur;
     Input *input;
-protected:
+   // Room *room;
 
 };
 

@@ -26,7 +26,6 @@ void GLDisplayWidget::initializeGL()
     glEnable(GL_LIGHT0);
     glEnable(GL_COLOR_MATERIAL);
 
-
     fprintf(stderr, "initialisation du Gl\n");
 }
 

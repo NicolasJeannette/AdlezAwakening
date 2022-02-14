@@ -7,7 +7,7 @@
                      // and module widgets (QWidget, QGraphicsView).
 #include <QtWidgets>
 #include <QTimer>
-#include "gamemanager.h"
+#include "GameManager.h"
 
 class GLDisplayWidget : public QGLWidget
 {
