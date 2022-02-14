@@ -7,7 +7,7 @@
 class Input
 {
 public:
-    Input();
+    Input(Player* player);
         ~Input();
 
         bool forward = false;

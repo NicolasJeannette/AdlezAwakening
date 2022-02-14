@@ -1,6 +1,7 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
 #include "player.h"
+#include "input.h"
 
 
 class GameManager
@@ -12,8 +13,10 @@ public:
     void Update();
     void Render();
     void LoadContent();
-protected:
     Player *joueur;
+    Input *input;
+protected:
+
 };
 
 #endif // GAMEMANAGER_H

@@ -2,6 +2,7 @@
 #define FENETREPRINCIPALE_H
 
 #include <QMainWindow>
+
 class QGraphicsScene;
 class QGraphicsView;
 class GameManager;

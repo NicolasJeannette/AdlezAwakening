@@ -34,35 +34,23 @@ void GLDisplayWidget::paintGL(){
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    drawPlayer();
+
 
     // Center the camera
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    glTranslatef(0.0, 0.0, _Z);
+    glTranslatef(gamemanager.joueur->m_playerDir.x(), gamemanager.joueur->m_playerDir.y(),_Z);
+
+    gamemanager.Update();
 
     // Rotation
     //glRotatef(0.f, 90.0f, 0.0, 0.0f);
-
-  //  glBegin(GL_POLYGON);
-  //   glVertex3f(1.0, -1.0, 0.0);
-  //    glVertex3f(1.0, 1.0, 0.0);
-  //    glVertex3f(-1.0, 1.0, 0.0);
-  //    glVertex3f(-1.0, -1.0, 0.0);
-  //  glEnd();
-
-    glBegin(GL_POLYGON);
-      glVertex2f(1.0, -1.0);
-      glVertex2f(1.0, 1.0);
-      glVertex2f(-1.0, 1.0);
-      glVertex2f(-1.0, -1.0);
-    glEnd();
 }
 
-void GLDisplayWidget::keyPressEvent(QKeyEvent *event)
+void GLDisplayWidget::keyReleaseEvent(QKeyEvent *event)
 {
-    inputplayer.listenEvent(event);
+    gamemanager.input->listenEvent(event);
     if(event != NULL)
     {
         updateGL();

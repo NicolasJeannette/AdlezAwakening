@@ -7,8 +7,7 @@
                      // and module widgets (QWidget, QGraphicsView).
 #include <QtWidgets>
 #include <QTimer>
-#include "input.h"
-#include "player.h"
+#include "gamemanager.h"
 
 class GLDisplayWidget : public QGLWidget
 {
@@ -21,8 +20,7 @@ public:
     void paintGL(); // Display the scene Gl
     void resizeGL(int width, int height);
 
-    Input inputplayer;
-    Player player;
+    GameManager gamemanager;
 
 
 protected:
@@ -30,7 +28,7 @@ protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
     void wheelEvent(QWheelEvent *event);
-    void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *event);
 
 private:
 
