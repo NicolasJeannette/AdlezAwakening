@@ -15,11 +15,11 @@ class FenetrePrincipale : public QMainWindow
     Q_OBJECT
 
 public:
+    Ui::FenetrePrincipale *ui;
     FenetrePrincipale(QWidget *parent = nullptr);
     ~FenetrePrincipale();
 
 private:
-    Ui::FenetrePrincipale *ui;
     QGraphicsScene *scene;
         QGraphicsView *view;
 

@@ -7,6 +7,8 @@
                      // and module widgets (QWidget, QGraphicsView).
 #include <QtWidgets>
 #include <QTimer>
+#include "input.h"
+#include "player.h"
 
 class GLDisplayWidget : public QGLWidget
 {
@@ -19,11 +21,16 @@ public:
     void paintGL(); // Display the scene Gl
     void resizeGL(int width, int height);
 
+    Input inputplayer;
+    Player player;
+
+
 protected:
     // Mouse Management
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
     void wheelEvent(QWheelEvent *event);
+    void keyPressEvent(QKeyEvent *event);
 
 private:
 

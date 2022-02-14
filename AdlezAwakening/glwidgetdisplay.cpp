@@ -6,11 +6,12 @@
 #include <iostream>
 #include <filesystem>
 #include "fstream"
-
-
+#include "input.h"
+#include "QKeyEvent"
 GLDisplayWidget::GLDisplayWidget(QWidget *parent) : QGLWidget(parent), _X(0), _Y(0), _Z(-10)
 {
     // Update the scene
+    setFocusPolicy(Qt::StrongFocus);
     connect( &_timer, SIGNAL(timeout()), this, SLOT(updateGL()));
     _timer.start(16); // Starts or restarts the timer with a timeout interval of 16 milliseconds.
 }
@@ -25,12 +26,15 @@ void GLDisplayWidget::initializeGL()
     glEnable(GL_LIGHT0);
     glEnable(GL_COLOR_MATERIAL);
 
+
     fprintf(stderr, "initialisation du Gl\n");
 }
 
 void GLDisplayWidget::paintGL(){
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    drawPlayer();
 
     // Center the camera
     glMatrixMode(GL_MODELVIEW);
@@ -41,12 +45,28 @@ void GLDisplayWidget::paintGL(){
     // Rotation
     //glRotatef(0.f, 90.0f, 0.0, 0.0f);
 
+  //  glBegin(GL_POLYGON);
+  //   glVertex3f(1.0, -1.0, 0.0);
+  //    glVertex3f(1.0, 1.0, 0.0);
+  //    glVertex3f(-1.0, 1.0, 0.0);
+  //    glVertex3f(-1.0, -1.0, 0.0);
+  //  glEnd();
+
     glBegin(GL_POLYGON);
-      glVertex3f(1.0, -1.0, 0.0);
-      glVertex3f(1.0, 1.0, 0.0);
-      glVertex3f(-1.0, 1.0, 0.0);
-      glVertex3f(-1.0, -1.0, 0.0);
+      glVertex2f(1.0, -1.0);
+      glVertex2f(1.0, 1.0);
+      glVertex2f(-1.0, 1.0);
+      glVertex2f(-1.0, -1.0);
     glEnd();
+}
+
+void GLDisplayWidget::keyPressEvent(QKeyEvent *event)
+{
+    inputplayer.listenEvent(event);
+    if(event != NULL)
+    {
+        updateGL();
+    }
 }
 
 void GLDisplayWidget::resizeGL(int width, int height){

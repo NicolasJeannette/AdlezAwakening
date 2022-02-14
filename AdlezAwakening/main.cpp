@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
     }
     FenetrePrincipale w;
 
-
-
     w.show();
     return a.exec();
 }

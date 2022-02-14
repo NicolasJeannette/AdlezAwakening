@@ -1,25 +1,19 @@
 #ifndef GAMEMANAGER_H
-#include <QObject>
-#include <QTimer>
-#include <QFile>
-#include <QString>
-#include <QTextStream>
-#include <QList>
-#include <iostream>
-
-#include <QGraphicsPixmapItem>
-class QGraphicsScene;
 #define GAMEMANAGER_H
+#include "player.h"
 
-class GameManager : public QObject
+
+class GameManager
 {
-    Q_OBJECT
 public:
-    GameManager(QGraphicsScene &scene, QObject *parent = 0);
-    ~GameManager();
-
-private:
-    QGraphicsScene &scene;
-
+    GameManager();
+    void Init();
+    void Run();
+    void Update();
+    void Render();
+    void LoadContent();
+protected:
+    Player *joueur;
 };
+
 #endif // GAMEMANAGER_H
