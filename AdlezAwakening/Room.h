@@ -34,6 +34,7 @@ public:
     void drawRight(bool haveDoor);
     void drawLeft(bool haveDoor);
 
+
     int posx;
     int posy;
 };

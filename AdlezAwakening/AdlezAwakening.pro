@@ -13,6 +13,7 @@ SOURCES += \
     Room.cpp \
     Vector2.cpp \
     Vector3.cpp \
+    cube.cpp \
     donjon.cpp \
     gamemanager.cpp \
     glwidgetdisplay.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     Room.h \
     Vector2.h \
     Vector3.h \
+    cube.h \
     donjon.h \
     fenetreprincipale.h \
     gamemanager.h \

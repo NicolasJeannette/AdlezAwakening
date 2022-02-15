@@ -14,7 +14,11 @@ public:
     QVector2D m_startDir;
     QVector2D m_playerDir;
 
-
+    QVector2D GetPositionHautDroite();
+    QVector2D GetPositionBasGauche();
+    QVector2D GetPositionBasDroite();
+    QVector2D GetPositionHautGauche();
+    QVector2D GetPosition();
 private:
     bool isMoving;
     float _X, _Y ,_Z; // Translation
