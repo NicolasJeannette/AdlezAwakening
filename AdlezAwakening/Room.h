@@ -17,29 +17,31 @@ public:
             End,
             Null
         };
+    // Constructors
     Room(RoomType rt);
     Room(string desi);
     Room();
 
+    // Setters
     void SetPosition(int x, int y);
     void SetRoomType(RoomType rt);
 
     ~Room();
 
     RoomType type;
-    int numDoor;
-    string designation;
+    int numDoor; // The number of doors in this room (but not the sides)
+    string designation; // A string representation of the room (not depend to the enum)
 
-    void drawTop(bool haveDoor);
-    void drawBot(bool haveDoor);
-    void drawRight(bool haveDoor);
-    void drawLeft(bool haveDoor);
+    void drawTop(bool haveDoor); // Draw the top wall of the room
+    void drawBot(bool haveDoor); // Draw the bot wall of the room
+    void drawRight(bool haveDoor); // Draw the right wall of the room
+    void drawLeft(bool haveDoor); // Draw the left wall of the room
 
 
     int posx;
     int posy;
 
-    void drawRoom(vector<vector<Room*>> &adjacente  );
+    void drawRoom(vector<vector<Room*>> &adjacente  ); // Draw the walls in the room and latter obsatcles
 };
 
 #endif // ROOM_H
