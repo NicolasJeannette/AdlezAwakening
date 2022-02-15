@@ -12,6 +12,8 @@ GameManager::GameManager()
  instanceDJ = new Donjon(15,15);
  //Initialisation des salles et du joueur
  instanceDJ->GenerationDonjon();
+
+
 }
 void GameManager::Init()
 {
@@ -26,6 +28,7 @@ void GameManager::Run(){
 void GameManager::Update()
 {
  joueur->DrawPlayer();
+ instanceDJ->getStartingRoom()->drawRoom(instanceDJ->rooms);
 }
 void GameManager::LoadContent()
 {

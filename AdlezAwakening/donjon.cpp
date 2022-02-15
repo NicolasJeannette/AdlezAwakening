@@ -71,7 +71,7 @@ void Donjon::GenerationDonjon()
 
 void Donjon::DisplayDungeon()
 {
- string tmp ;
+    string tmp ;
     for (int x = 0; x < rooms.size(); x++)
     {
         for (int y = 0; y < rooms[x].size(); y++)
@@ -131,9 +131,6 @@ void Donjon::SetStartndEndRoom(Room* OriginRoom)
     int tmpDistanceManathan = 0;
 
     Room* FarestRoomS = nullptr;
-    Room* FarestRoomE = nullptr;
-    int DistanceManathanE = 0;
-    int tmpDistanceManathanE = 0;
 
     for (int x = 0; x < rooms.size(); x++)
     {
@@ -152,7 +149,7 @@ void Donjon::SetStartndEndRoom(Room* OriginRoom)
         }
     }
     FarestRoomS->designation = "[S]";
-FarestRoomS->type = Room::RoomType::Start;
+    FarestRoomS->type = Room::RoomType::Start;
     // for (int x = 0; x < rooms.size(); x++)
     // {
     //     for (int y = 0; y < rooms[x].size(); y++)
@@ -224,8 +221,23 @@ Room* Donjon::dijkstra(Room* origin)
         {
             maxWeight = get<1>(visitedRoom[i]);
             EndRoom = get<0>(visitedRoom[i]);
+
         }
     }
-    EndRoom->designation = "[E]";
+    EndRoom->SetRoomType(Room::RoomType::End);
     return EndRoom;
+}
+
+
+Room* Donjon::getStartingRoom()
+{
+    for (int x = 0; x < rooms.size(); x++)
+    {
+        for (int y = 0; y < rooms[x].size(); y++)
+        {
+            if (rooms[x][y]->type == Room::RoomType::Start)
+                return rooms[x][y];
+
+        }
+    }
 }

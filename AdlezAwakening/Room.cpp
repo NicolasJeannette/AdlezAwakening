@@ -185,8 +185,20 @@ void Room::drawLeft(bool haveDoor)
     }else
     {
         glBegin(GL_LINE_STRIP);
-        glVertex2f(5.5, 3.5);
-        glVertex2f(5.5,-3.5);
+        glVertex2f(-5.5, 3.5);
+        glVertex2f(-5.5,-3.5);
         glEnd();
     }
+}
+
+
+void Room::drawRoom(vector<vector<Room*>> &adjacente )
+{
+
+   drawTop(adjacente[this->posx-1 ][this->posy]->type != Room::Null);
+   drawBot(adjacente[this->posx+1 ][this->posy]->type != Room::Null);
+   drawRight(adjacente[this->posx ][this->posy+1]->type != Room::Null);
+   drawLeft(adjacente[this->posx ][this->posy-1]->type != Room::Null);
+
+
 }

@@ -2,6 +2,7 @@
 #define ROOM_H
 #include <string>
 #include <cstdlib>
+#include <vector>
 using namespace std;
 
 class Room
@@ -33,9 +34,10 @@ public:
     void drawBot(bool haveDoor);
     void drawRight(bool haveDoor);
     void drawLeft(bool haveDoor);
-
     int posx;
     int posy;
+
+    void drawRoom(vector<vector<Room*>> &adjacente  );
 };
 
 #endif // ROOM_H
