@@ -5,7 +5,7 @@ Player::~Player(){
 }
 Player::Player()
 {
-    m_startPos = QVector2D(0, 0);
+    m_startPos = QVector2D(0, 0); //World Position
     m_startDir = QVector2D(0, 0);
     m_playerDir = m_startDir;
 }
@@ -14,12 +14,33 @@ void Player::DrawPlayer(){
 
     // Rotation
     //glRotatef(0.f, 90.0f, 0.0, 0.0f);
-
    glBegin(GL_POLYGON);
-     glVertex2f(0.5, -0.5);
-     glVertex2f(0.5, 0.5);
-     glVertex2f(-0.5, 0.5);
-     glVertex2f(-0.5, -0.5);
+     glVertex2f(m_playerDir.x() + 0.3, m_playerDir.y() + -0.3); //Bas droite
+     glVertex2f(m_playerDir.x() + 0.3,m_playerDir.y() + 0.3);//Haut droite
+     glVertex2f(m_playerDir.x() +- 0.3,m_playerDir.y() + 0.3); // Haut Gauche
+     glVertex2f(m_playerDir.x() +- 0.3,m_playerDir.y() + -0.3); // Bas Gauche
    glEnd();
 }
+QVector2D Player::GetPositionHautGauche()
+{
+    return QVector2D(m_playerDir.x() +- 0.5,m_playerDir.y() + 0.5);
+}
+QVector2D Player::GetPositionHautDroite()
+{
+    return QVector2D(m_playerDir.x() + 0.5,m_playerDir.y() + 0.5);
+}
+QVector2D Player::GetPositionBasDroite()
+{
+    return QVector2D(m_playerDir.x() + 0.5, m_playerDir.y() + -0.5);
+}
+QVector2D Player::GetPositionBasGauche()
+{
+    return QVector2D(m_playerDir.x() +- 0.5,m_playerDir.y() + -0.5);
+}
+QVector2D Player::GetPosition()
+{
+    return QVector2D(m_playerDir.x(),m_playerDir.y());
+}
+
+
 

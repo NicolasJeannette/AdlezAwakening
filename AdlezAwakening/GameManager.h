@@ -2,6 +2,8 @@
 #define GAMEMANAGER_H
 #include "player.h"
 #include "input.h"
+#include "Room.h"
+#include "cube.h"
 #include "donjon.h"
 
 class GameManager
@@ -13,8 +15,11 @@ public:
     void Update();
     void Render();
     void LoadContent();
+    bool CheckCollision(Player *joueur,Cube *cube);
     Player *joueur;
     Input *input;
+    Cube *cube;
+    Room room;
     Donjon *instanceDJ;
 protected:
 
