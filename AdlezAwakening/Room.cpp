@@ -30,10 +30,12 @@ Room::Room()
 Room::~Room()
 {
 }
+
 Room::Room(string desi)
 {
     this->designation = desi;
 }
+
 Room::Room(RoomType rt)
 {
     this->type = rt;
@@ -156,6 +158,14 @@ void Room::drawRight(bool haveDoor)
         glEnd();
     }
 }
+
+void Room::SetPosition(int x, int y)
+{
+    this->posx = x;
+    this->posy = y;
+}
+
+
 
 void Room::drawLeft(bool haveDoor)
 {

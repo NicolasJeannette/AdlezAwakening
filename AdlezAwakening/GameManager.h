@@ -4,8 +4,7 @@
 #include "input.h"
 #include "Room.h"
 #include "cube.h"
-
-
+#include "donjon.h"
 
 class GameManager
 {
@@ -21,6 +20,7 @@ public:
     Input *input;
     Cube *cube;
     Room room;
+    Donjon *instanceDJ;
 protected:
 
 };

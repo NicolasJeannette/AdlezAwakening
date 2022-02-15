@@ -21,13 +21,13 @@ public:
     Room();
 
     void SetPosition(int x, int y);
-        void SetRoomType(RoomType rt);
+    void SetRoomType(RoomType rt);
 
-        ~Room();
+    ~Room();
 
-        RoomType type;
-        int numDoor;
-        string designation;
+    RoomType type;
+    int numDoor;
+    string designation;
 
     void drawTop(bool haveDoor);
     void drawBot(bool haveDoor);
