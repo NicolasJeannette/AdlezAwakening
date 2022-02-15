@@ -15,10 +15,10 @@ void Player::DrawPlayer(){
     // Rotation
     //glRotatef(0.f, 90.0f, 0.0, 0.0f);
    glBegin(GL_POLYGON);
-     glVertex2f(m_playerDir.x() + 0.3, m_playerDir.y() + -0.3); //Bas droite
-     glVertex2f(m_playerDir.x() + 0.3,m_playerDir.y() + 0.3);//Haut droite
-     glVertex2f(m_playerDir.x() +- 0.3,m_playerDir.y() + 0.3); // Haut Gauche
-     glVertex2f(m_playerDir.x() +- 0.3,m_playerDir.y() + -0.3); // Bas Gauche
+     glVertex2f(m_playerDir.x() + 0.5, m_playerDir.y() + -0.5); //Bas droite
+     glVertex2f(m_playerDir.x() + 0.5,m_playerDir.y() + 0.5);//Haut droite
+     glVertex2f(m_playerDir.x() +- 0.5,m_playerDir.y() + 0.5); // Haut Gauche
+     glVertex2f(m_playerDir.x() +- 0.5,m_playerDir.y() + -0.5); // Bas Gauche
    glEnd();
 }
 QVector2D Player::GetPositionHautGauche()

@@ -40,11 +40,13 @@ void GameManager::Update()
     vecTopGauche = joueur->GetPositionHautGauche();
     cube->DrawCube();
     vecCube = cube->GetPosition();
-    // room.drawTop(true);
-    // room.drawBot(true);
-    // room.drawRight(true);
-    // room.drawLeft(true);
-    CheckCollision(joueur,cube);
+  //  CheckCollision(joueur,cube);
+    QPointF A,B,C,D;
+    A = QPointF(joueur->GetPositionHautGauche().toPointF());
+    B = QPointF(joueur->GetPositionBasGauche().toPointF());
+    C = QPointF(cube->GetPositionHautDroite().toPointF());
+    D = QPointF(cube->GetPositionBasDroite().toPointF());
+    LinesIntersect(A,B,C,D);
 }
 
 void GameManager::LoadContent()
@@ -60,7 +62,13 @@ bool  approximate(T a , T b)
         return true;
     else return false;
 }
+template<class T> static
+T  GetDifference(T a , T b)
+{
+    T diff = a -b ;
 
+     return diff;
+}
 bool GameManager::CheckCollision(Player *one, Cube *two) // AABB - AABB collision
 {
 
@@ -91,4 +99,37 @@ bool GameManager::CheckCollision(Player *one, Cube *two) // AABB - AABB collisio
     }
     return collisionX && collisionY;
 }
+ bool GameManager::LinesIntersect(QPointF A, QPointF B, QPointF C, QPointF D)
+    {
+        QPointF CmP = QPointF(C.x() - A.x(), C.y() - A.y());
+        QPointF r = QPointF(B.x() - A.x(), B.y() - A.y());
+        QPointF s = QPointF(D.x() - C.x(), D.y() - C.y());
+
+        float CmPxr = CmP.x() * r.y() - CmP.y() * r.x();
+        float CmPxs = CmP.x() * s.y() - CmP.y() * s.x();
+        float rxs = r.x() * s.y() - r.y() * s.x();
+
+        bool test = approximate(CmPxr,0.0f);
+        if (test)
+        {
+            // Lines are collinear, and so intersect if they have any overlap
+            glColor3f(255,0,0);
+            return ((C.x() - A.x() < 0.0) != (C.x() - B.x() < 0.0))
+                || ((C.y() - A.y() < 0.0) != (C.y() - B.y() < 0.0));
+        }
+
+        if (rxs == 0.0)
+        {
+            glColor3f(255,255,255);
+
+            return false; // Lines are parallel.
+        }
+
+
+        float rxsr = 1.0 / rxs;
+        float t = CmPxs * rxsr;
+        float u = CmPxr * rxsr;
+
+        return (t >= 0.0) && (t <= 1.0) && (u >= 0.0) && (u <= 1.0);
+    }
 

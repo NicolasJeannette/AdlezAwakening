@@ -21,4 +21,20 @@ void Cube::DrawCube()
       glVertex2f(- 0.5,-0.5); // Bas Gauche
     glEnd();
 }
+QVector2D Cube::GetPositionHautGauche()
+{
+    return QVector2D(- 0.5, 0.5);
+}
+QVector2D Cube::GetPositionHautDroite()
+{
+    return QVector2D(0.5, 0.5);
+}
+QVector2D Cube::GetPositionBasDroite()
+{
+    return QVector2D( 0.5, -0.5);
+}
+QVector2D Cube::GetPositionBasGauche()
+{
+    return QVector2D(- 0.5, -0.5);
+}
 
