@@ -23,6 +23,9 @@ public:
     void drawBot(bool haveDoor);
     void drawRight(bool haveDoor);
     void drawLeft(bool haveDoor);
+
+    int posx;
+    int posy;
 };
 
 #endif // ROOM_H
