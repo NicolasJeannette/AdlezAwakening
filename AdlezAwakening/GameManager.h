@@ -16,6 +16,7 @@ public:
     void Render();
     void LoadContent();
     bool CheckCollision(Player *joueur,Cube *cube);
+    bool LinesIntersect(QPointF A, QPointF B, QPointF C, QPointF D);
     Player *joueur;
     Input *input;
     Cube *cube;
