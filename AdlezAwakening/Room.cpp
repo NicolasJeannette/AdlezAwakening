@@ -4,17 +4,85 @@
 
 Room::Room()
 {
+    int random = rand() % 5;
 
+        switch (random)
+        {
+        case Room::Start:
+            designation = "[S]";
+            break;
+        case Room::Bonus:
+            designation = "[B]";
+            break;
+        case Room::End:
+            designation = "[E]";
+            break;
+        case Room::Standard:
+            designation = "[X]";
+            break;
+        case Room::Null:
+            designation = "[ ]";
+            break;
+        default:
+            break;
+        }
 }
-
+Room::~Room()
+{
+}
+Room::Room(string desi)
+{
+    this->designation = desi;
+}
 Room::Room(RoomType rt)
 {
+    this->type = rt;
 
+        switch (rt)
+        {
+        case Room::Start:
+            designation = "[S]";
+            break;
+        case Room::Bonus:
+            designation = "[B]";
+            break;
+        case Room::End:
+            designation = "[E]";
+            break;
+        case Room::Null:
+            designation = "[ ]";
+            break;
+        case Room::Standard:
+            designation = "[X]";
+            break;
+        default:
+            break;
+        }
 }
-
-void Room::GenerationSalle()
+void Room::SetRoomType(RoomType rt)
 {
-//Génération d'une salle contenant un cercle et un carré
+    this->type = rt;
+
+    switch (rt)
+    {
+    case Room::Start:
+        designation = "[S]";
+        break;
+    case Room::Bonus:
+        designation = "[B]";
+        break;
+    case Room::End:
+        designation = "[E]";
+        break;
+    case Room::Null:
+        designation = "[ ]";
+        break;
+    case Room::Standard:
+        designation = "[X]";
+        break;
+    default:
+        break;
+    }
 }
 
 void Room::drawBot(bool haveDoor)

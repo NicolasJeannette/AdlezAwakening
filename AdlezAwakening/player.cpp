@@ -15,11 +15,11 @@ void Player::DrawPlayer(){
     // Rotation
     //glRotatef(0.f, 90.0f, 0.0, 0.0f);
 
-  // glBegin(GL_POLYGON);
-  //   glVertex2f(0.5, -0.5);
-  //   glVertex2f(0.5, 0.5);
-  //   glVertex2f(-0.5, 0.5);
-  //   glVertex2f(-0.5, -0.5);
-  // glEnd();
+   glBegin(GL_POLYGON);
+     glVertex2f(0.5, -0.5);
+     glVertex2f(0.5, 0.5);
+     glVertex2f(-0.5, 0.5);
+     glVertex2f(-0.5, -0.5);
+   glEnd();
 }
 
