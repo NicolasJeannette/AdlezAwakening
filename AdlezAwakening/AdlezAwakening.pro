@@ -10,6 +10,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Room.cpp \
     Vector2.cpp \
     Vector3.cpp \
     donjon.cpp \
@@ -18,10 +19,10 @@ SOURCES += \
     input.cpp \
     main.cpp \
     fenetreprincipale.cpp \
-    player.cpp \
-    salle.cpp
+    player.cpp
 
 HEADERS += \
+    Room.h \
     Vector2.h \
     Vector3.h \
     donjon.h \
@@ -29,8 +30,7 @@ HEADERS += \
     gamemanager.h \
     glwidgetdisplay.h \
     input.h \
-    player.h \
-    salle.h
+    player.h
 
 FORMS += \
     fenetreprincipale.ui

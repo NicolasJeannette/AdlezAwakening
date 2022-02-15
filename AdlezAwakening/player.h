@@ -13,6 +13,8 @@ public:
     QVector2D m_startPos;
     QVector2D m_startDir;
     QVector2D m_playerDir;
+
+
 private:
     bool isMoving;
     float _X, _Y ,_Z; // Translation
