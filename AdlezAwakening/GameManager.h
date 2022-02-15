@@ -2,7 +2,7 @@
 #define GAMEMANAGER_H
 #include "player.h"
 #include "input.h"
-
+#include "donjon.h"
 
 class GameManager
 {
@@ -15,6 +15,7 @@ public:
     void LoadContent();
     Player *joueur;
     Input *input;
+    Donjon *instanceDJ;
 protected:
 
 };
